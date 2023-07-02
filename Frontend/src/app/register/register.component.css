@@ -1,0 +1,107 @@
+tr,td{
+    /* border: 1px solid black; */
+    text-align: center;
+    padding:10px;
+}
+
+table{
+    width:800px;
+    margin: auto;
+}
+
+label,input,select{
+    font-size: 20px;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+button{
+    font-size: 20px;
+}
+
+.loginclass {
+    background-image: url(../../assets/patienthome3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+.form-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7%;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .alert-danger {
+    color: red;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-group button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-group button.btn {
+    background-color: #989898;
+    color: #ffebeb;
+  }
+  
+  .button-group button.btn:hover {
+    background-color: #413d3d;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .already {
+    font-size: 16px;
+    color: #555;
+  }
+  
+ .login {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 140px;
+    margin-bottom: 40px;
+  }
+  
+  .login:hover {
+    background-color: #ccc;
+  }
+  
+  

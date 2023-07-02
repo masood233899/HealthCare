@@ -1,0 +1,92 @@
+tr,
+td {
+  /* border: 1px solid black; */
+  text-align: center;
+  padding: 10px;
+}
+
+table {
+  width: 60%;
+  margin: auto;
+}
+
+input,
+select {
+  font-size: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #989898;
+    color: #ffebeb;
+}
+
+body {
+  background-color: #323232;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loginclass {
+  max-width: 100%;
+  overflow-x: auto;
+  padding-top: 100px;
+}
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 34px;
+  /* font-weight: bold; */
+  color: black;
+}
+
+td {
+  padding: 8px;
+}
+
+
+
+.loginclass {
+  background-image: url(../../assets/patienthome1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* Change overflow-x to overflow */
+  padding-top: 100px;
+ 
+  background-attachment: fixed;
+  height: 700px;
+}
+
+/* Additional Responsive Styles for Background Image */
+@media screen and (max-width: 768px) {
+  .loginclass {
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .loginclass {
+    height: 600px;
+  }
+}
+
+/* Responsive Styles for Login Form */
+@media screen and (max-width: 480px) {
+  .login-form {
+    margin: 20px;
+  }
+}

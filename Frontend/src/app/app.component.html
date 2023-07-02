@@ -1,0 +1,73 @@
+<head>
+    <!-- Other head elements -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+  
+  <div class="parent-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Navbar content -->
+      <div class="logo">
+        <img src="./../assets/logo.jpg" class="logoimg" alt="">
+      </div>
+      <ul class="menu">
+        <li *ngIf="role == 'admin'" ><a  routerLink="/admin">Admin</a></li> <!--have to add ngif here for roles-->
+        <li *ngIf="role !== ''"><a routerLink="/home">Home</a></li>
+        <li *ngIf="role !== ''"><a routerLink="/doctor">Doctor</a></li>
+        <!-- <li><a *ngIf="role == ''"  routerLink="/">Login</a></li> -->
+        <li *ngIf="role !== ''"><a routerLink="staff">Staff</a></li>
+        <li>
+          <a *ngIf="role !== ''" (click)="logOutPage()" class="lgout">Logout</a>
+        </li>
+        
+        
+        <!-- <li><a routerLink="/login">Login</a></li> -->
+        <!-- <li><a routerLink="/signup">Signup</a></li> -->
+        <li>
+          <!-- <a (click)="logout()" style="cursor:pointer">Logout</a> -->
+      </li>
+      </ul>
+    </nav>
+  
+    <!-- Other content of the parent component -->
+  
+    <!-- Main Div Component -->
+    <router-outlet></router-outlet>
+  </div>
+  
+   
+ 
+   <!-- (activate)="checkLoggedInUser()"  -->
+  
+   <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>123 Hospital Street, City</p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Email: info@hospital.com</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>About Us</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id fermentum massa. Nunc ut lectus sed ligula consequat semper.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Connect With Us</h3>
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 Hospital. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+  

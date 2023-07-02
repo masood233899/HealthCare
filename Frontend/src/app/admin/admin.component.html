@@ -1,0 +1,61 @@
+<button type="button" (click)="sendRequest()" class="view">view request</button>
+
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email Id</th>
+            <th scope="col">User Name</th>
+            <th scope="col">gender</th>
+            <th scope="col">role</th>
+            <th scope="col">specialization</th>
+            <th scope="col">experiance</th>
+            <th scope="col">password</th>
+
+
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of staff">
+            <td>{{b.name}}</td>
+            <td>{{b.email}}</td>
+            <td>{{b.userName}}</td>
+            <td>{{b.gender}}</td>
+            <td>{{b.role}}</td>
+            <td>{{b.specialization}}</td>
+            <td>{{b.experiance}}</td>
+            <td>{{b.password}}</td>
+
+
+            <td>
+                <button (click)="addRow(b)">Add</button>
+                <button (click)="deleteRow(b)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<div class="card-container">
+    <div class="card" *ngFor="let b of staff">
+        <img class="card-img-top" src="path/to/image.jpg" alt="User Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ b.name }}</h5>
+            <p class="card-text">
+                <strong>Email:</strong> {{ b.email }}<br>
+                <strong>User Name:</strong> {{ b.userName }}<br>
+                <strong>Gender:</strong> {{ b.gender }}<br>
+                <strong>Role:</strong> {{ b.role }}<br>
+                <strong>Specialization:</strong> {{ b.specialization }}<br>
+                <strong>Experience:</strong> {{ b.experience }}<br>
+                <strong>Password:</strong> {{ b.password }}
+            </p>
+            <button class="btn btn-primary" (click)="addRow(b)">Add</button>
+            <button class="btn btn-danger" (click)="deleteRow(b)">Delete</button>
+        </div>
+    </div>
+</div>
+
+
+
