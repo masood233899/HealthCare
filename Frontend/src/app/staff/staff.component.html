@@ -72,3 +72,18 @@
     <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
   </form> -->
   
+
+
+  <div class="card-container">
+      <img class="doctor-card-image" src="./../../assets/Doctor/{{ doctor.name }}.jpg" alt="Card Image">
+      <div class="doctor-card-body">
+        <h3 class="doctor-card-title">{{ doctor.name }}</h3>
+        <p class="doctor-card-description">Spec: {{ doctor.specialization }}</p>
+        <p class="doctor-card-price">Experience: {{ doctor.experience }}</p>
+        <p>Email: {{ doctor.email }}</p>
+        <p>User Name: {{ doctor.userName }}</p>
+        <p>Gender: {{ doctor.gender }}</p>
+        <p>Role: {{ doctor.role }}</p>
+        <p>Specialization: {{ doctor.specialization }}</p>
+      </div>
+    </div>

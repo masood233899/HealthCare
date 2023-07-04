@@ -73,6 +73,7 @@ export class RegisterComponent
       if (data && data.name !== "") {
         this.result = "wait for admin approval";
         alert('Resuest Sent Successful');
+        location.reload();
       } else {
         this.result = "change the user name";
         alert('Error in Resuest Sent');

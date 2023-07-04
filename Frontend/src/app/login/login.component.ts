@@ -32,6 +32,7 @@ export class LoginComponent
       localStorage.setItem("token",this.user.token);
       localStorage.setItem("this.internID",(this.user.id).toString());
       localStorage.setItem("role",this.user.role);
+      localStorage.setItem("name",this.user.userName);
       console.log(this.user);
 
   

@@ -1,3 +1,49 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-card-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px 0 0 10px;
+  object-fit: cover;
+}
+
+.doctor-card-content {
+  padding: 20px;
+}
+
+.doctor-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.doctor-card-description,
+.doctor-card-price,
+.doctor-card-details {
+  margin-bottom: 10px;
+}
+
+.doctor-card-details p {
+  margin: 0;
+}
+
+
+
+
+
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -18,6 +64,7 @@
   
 .card-container {
     display: flex;
+
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
@@ -70,6 +117,18 @@
   
   .card-button:hover {
     background-color: #0056b3;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
   

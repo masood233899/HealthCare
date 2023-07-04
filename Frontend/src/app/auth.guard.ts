@@ -10,21 +10,46 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) { }
 
   private isAllowed(): boolean {
-    if(localStorage.getItem('token') && localStorage.getItem('role') == 'admin')
-      return true;
-    else return false;
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    return !!(token && (role === 'admin' || role === 'doctor'));
   }
-  canActivate(): boolean {
-    if (this.isAllowed()) {
+
+  
+
+  canActivateDoctor(): boolean {
+    if (this.isAllowed() && localStorage.getItem('role') === 'doctor') {
       return true;
     } else {
+      if(confirm('Authenticated users only allowed!!!'))
+      {
+       this.router.navigate(['/logIN']);
+      }      return false;
+    }
+  }
 
-     if(confirm('Authenticated users only allowed!!!'))
+  canActivateAdmin(): boolean {
+    if (this.isAllowed() && localStorage.getItem('role') === 'admin') {
+      return true;
+    } else {
+      if(confirm('Authenticated users only allowed!!!'))
      {
       this.router.navigate(['/logIN']);
      }
-     return false;
-
+      return false;
     }
   }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
+    const allowedRoles = route.data['roles'] as string[];
+    const userRole = localStorage.getItem('role');
+
+    if (this.isAllowed() && userRole !== null && allowedRoles.includes(userRole)) {
+      return true;
+    } else {
+      alert('Restricted Access');
+      return this.router.createUrlTree(['/home']);
+    }
+  }
+  
 }

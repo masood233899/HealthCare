@@ -5,6 +5,7 @@ import { InternModel } from '../Models/intern.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { DoctorModel } from '../Models/Doctor.model';
 import { DoctorTableModel } from '../Models/DoctorTable.model';
+import { Booking } from '../Models/Booking.Model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ import { DoctorTableModel } from '../Models/DoctorTable.model';
 export class UserInternService {
 
   id:number | undefined;
+  name:any;
 
   constructor(private httpClient:HttpClient) {
     this.id=Number(localStorage.getItem("this.internID"))
+    this.name=localStorage.getItem("name");
 
    }
 
@@ -85,7 +88,24 @@ export class UserInternService {
       let url = 'https://localhost:7232/api/Users/UpdateUser/' + doctorid;
       return this.httpClient.put(url, updatedDetail);
     }
+     
+    getDoctorbyname():Observable<any>
+    {
+      https://localhost:7232/api/Doctors/getdotorbyname?name=Banner%40123
+      return this.httpClient.get("https://localhost:7232/api/Doctors/getdotorbyname?name="+this.name);
 
+
+    }
     
+    getTimeslot():Observable<any>
+    {
+      return this.httpClient.get("https://localhost:7232/api/TimeSlots");
+
+    }
+    bookappointment(book:Booking):Observable<any>
+    {
+      return this.httpClient.post("https://localhost:7232/api/Bookings",book);
+
+    }
 
 }

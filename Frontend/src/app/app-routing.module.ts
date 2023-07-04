@@ -13,13 +13,11 @@ const routes: Routes = [
   {path:'',redirectTo:'logIN',pathMatch:'full'},
   {path:'register',component:RegisterComponent},
   {path:'logIN',component:LoginComponent},
-  {path:'admin',component:AdminComponent, canActivate:[AuthGuard]},
+  {path:'admin',component:AdminComponent,  canActivate:[AuthGuard], data : {roles: ['admin']} },
   {path:'home',component:HomeComponent},
-  {path:'staff',component:StaffComponent},
+  {path:'staff',component:StaffComponent,  canActivate:[AuthGuard], data : {roles: ['doctor']}},
   {path:'imageslider', component:ImageSliderComponent},
   {path:'doctor', component:DoctorsComponent}
-
-
 ];
 
 @NgModule({

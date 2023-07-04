@@ -11,8 +11,8 @@ export class DoctorModel
         public role: string = "",
         public specialization: string = "",
         public experiance: number = 0,
-        public requestStatus: string = 'request',
-        public availability: string = "hi",
+        // public requestStatus: string = 'request',
+        // public availability: string = "hi",
         public password: string = "",
     
        public user:UserModel=new UserModel()){

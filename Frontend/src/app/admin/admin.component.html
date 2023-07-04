@@ -39,7 +39,7 @@
 
 <div class="card-container">
     <div class="card" *ngFor="let b of staff">
-        <img class="card-img-top" src="path/to/image.jpg" alt="User Image">
+        <img class="card-img-top" src="./../../assets/Doctor/{{b.name}}.jpg" alt="User Image">
         <div class="card-body">
             <h5 class="card-title">{{ b.name }}</h5>
             <p class="card-text">
@@ -48,7 +48,7 @@
                 <strong>Gender:</strong> {{ b.gender }}<br>
                 <strong>Role:</strong> {{ b.role }}<br>
                 <strong>Specialization:</strong> {{ b.specialization }}<br>
-                <strong>Experience:</strong> {{ b.experience }}<br>
+                <strong>Experience:</strong> {{ b.experiance }}<br>
                 <strong>Password:</strong> {{ b.password }}
             </p>
             <button class="btn btn-primary" (click)="addRow(b)">Add</button>

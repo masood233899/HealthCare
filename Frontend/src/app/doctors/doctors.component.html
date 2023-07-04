@@ -46,9 +46,30 @@
         <h3 class="card-title">{{ item.name }}</h3>
         <p class="card-description">Spec: {{ item.specialization }}</p>
         <p class="card-price">Exp: {{ item.experiance }}</p>
-        <button class="card-button">Book</button>
+        <button class="card-button"  (click)="openPopup(item)">Book</button>
       </div>
     </div>
   </div>
   
+  <div class="popup-overlay"  *ngIf="showPopup">
+    <div class="popup-container">
+      <span class="close-icon" (click)="closePopup()">X</span>
+      <form>
+        <input type="text" name="name" placeholder="Enter Name" #name="ngModel"
+        [(ngModel)]="book.name" />   
+        <br />
+        <input type="date" name="date" #date="ngModel" placeholder="Select date" [(ngModel)]="book.date"/>
+        <br />
 
+        
+        <select [(ngModel)]="findtimeid"(change)="getTimeslotid()"[ngModelOptions]="{standalone: true}">
+          <option *ngFor="let option of time" [value]="option.addTimeSlot">{{ option.addTimeSlot }}</option>
+        </select>
+        
+        
+        <p>{{book.timeId}}</p>
+        <br />
+        <button type="button" (click)="postDetails()">Submit</button>
+      </form>
+    </div>
+  </div>
